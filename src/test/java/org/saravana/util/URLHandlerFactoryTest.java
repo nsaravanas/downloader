@@ -24,8 +24,8 @@ public class URLHandlerFactoryTest {
 		factory = spy(new URLHandlerFactory());
 		factory.setUrlHandlers(new HashSet<String>() {
 			{
-				add("telnet:org.saravana.TelnetHandler");
-				add("tcp:org.saravana.TcpHandler");
+				add("telnet:org.saravana.handler.TelnetHandler");
+				add("tcp:org.saravana.handler.TcpHandler");
 			}
 		});
 	}
@@ -65,7 +65,7 @@ public class URLHandlerFactoryTest {
 		try {
 			URLStreamHandler handler = factory.getHandler("telnet");
 			assertNotNull(handler);
-			assertEquals("org.saravana.TelnetHandler", handler.getClass().getName());
+			assertEquals("org.saravana.handler.TelnetHandler", handler.getClass().getName());
 			verify(factory).getHandler("telnet");
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			fail("Exception: " + e.getMessage());
@@ -79,7 +79,7 @@ public class URLHandlerFactoryTest {
 			URLStreamHandler handler2 = factory.getHandler("telnet");
 
 			assertNotNull(handler);
-			assertEquals("org.saravana.TelnetHandler", handler.getClass().getName());
+			assertEquals("org.saravana.handler.TelnetHandler", handler.getClass().getName());
 			verify(factory, times(2)).getHandler("telnet");
 			assertSame(handler, handler2);// same instance from cache
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
