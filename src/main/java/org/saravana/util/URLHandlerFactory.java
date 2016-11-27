@@ -18,7 +18,8 @@ public class URLHandlerFactory {
 	private Set<String> urlHandlers;
 
 	private Map<String, String> handlerMap;
-	private Map<String, Object> cache;
+
+	private Map<String, URLStreamHandler> cache;
 
 	@PostConstruct
 	public void init() {
@@ -41,9 +42,9 @@ public class URLHandlerFactory {
 	}
 
 	private URLStreamHandler getHandlerCache(String claz) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-		Object handler = null;
+		URLStreamHandler handler = null;
 		if (null == (handler = cache.get(claz))) {
-			handler = Class.forName(claz).newInstance();
+			handler = (URLStreamHandler) Class.forName(claz).newInstance();
 			cache.put(claz, handler);
 		}
 		return (URLStreamHandler) handler;
