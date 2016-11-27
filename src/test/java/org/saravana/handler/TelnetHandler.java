@@ -1,4 +1,4 @@
-package org.saravana;
+package org.saravana.handler;
 
 import java.io.IOException;
 import java.net.URL;
@@ -9,7 +9,6 @@ public class TelnetHandler extends URLStreamHandler {
 
 	@Override
 	protected URLConnection openConnection(URL u) throws IOException {
-		// TODO Dummy test method
 		return null;
 	}
 
