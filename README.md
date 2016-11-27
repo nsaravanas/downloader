@@ -8,3 +8,7 @@ example `url.stream.handlers = telnet:org.saravana.TelnetHandler,snmp:org.sarava
 
  1. Java8
  2. SpringBoot 1.4.0
+ 
+# Run
+
+	java -jar downloader-{version}.jar [URLs]
