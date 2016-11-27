@@ -22,6 +22,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 public class Downloader implements CommandLineRunner {
 
 	private static final Logger LOG = LoggerFactory.getLogger(Downloader.class);
+
 	@Autowired
 	private DownloadService downloadService;
 
@@ -69,20 +70,10 @@ public class Downloader implements CommandLineRunner {
 		}
 	}
 
-	/**
-	 * unit-testing
-	 * 
-	 * @param downloadService
-	 */
 	protected void setDownloadService(DownloadService downloadService) {
 		this.downloadService = downloadService;
 	}
 
-	/**
-	 * unit-testing
-	 * 
-	 * @param monitor
-	 */
 	protected void setMonitor(DownloadMonitor monitor) {
 		this.monitor = monitor;
 	}

@@ -35,8 +35,7 @@ public class DownloadConsumerImpl implements DownloadConsumer {
 	@Override
 	@PostConstruct
 	public void init() {
-		execService = Executors
-				.newFixedThreadPool(nThreads <= 0 ? Runtime.getRuntime().availableProcessors() : nThreads);
+		execService = Executors.newFixedThreadPool(nThreads <= 0 ? Runtime.getRuntime().availableProcessors() : nThreads);
 	}
 
 	private volatile boolean isRunning;

@@ -30,8 +30,7 @@ public class URLHandlerFactory {
 		}
 	}
 
-	public URLStreamHandler getHandler(String scheme)
-			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+	public URLStreamHandler getHandler(String scheme) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		if ("http".equals(scheme) || "https".equals(scheme) || "ftp".equals(scheme) || "file".equals(scheme))
 			return null;
 		String claz = handlerMap.get(scheme);
@@ -41,8 +40,7 @@ public class URLHandlerFactory {
 		return (URLStreamHandler) getHandlerCache(claz);
 	}
 
-	private URLStreamHandler getHandlerCache(String claz)
-			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+	private URLStreamHandler getHandlerCache(String claz) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		Object handler = null;
 		if (null == (handler = cache.get(claz))) {
 			handler = Class.forName(claz).newInstance();
@@ -56,11 +54,6 @@ public class URLHandlerFactory {
 		handlerMap.clear();
 	}
 
-	/**
-	 * Method added for unit-testing
-	 * 
-	 * @param urlHandlers
-	 */
 	public void setUrlHandlers(Set<String> urlHandlers) {
 		this.urlHandlers = urlHandlers;
 		init();
