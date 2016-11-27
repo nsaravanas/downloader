@@ -12,3 +12,7 @@ example `url.stream.handlers = telnet:org.saravana.handler.TelnetHandler,snmp:or
 # Run
 
 	java -jar downloader-{version}.jar [URLs]
+
+# Build Status
+
+[![Build Status](https://travis-ci.org/nsaravanas/downloader.svg?branch=master)](https://travis-ci.org/nsaravanas/downloader)
