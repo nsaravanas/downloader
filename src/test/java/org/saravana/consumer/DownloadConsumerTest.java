@@ -26,10 +26,13 @@ public class DownloadConsumerTest {
 
 	@Spy
 	private DownloadConsumerImpl spyDownloadConsumer = new DownloadConsumerImpl();
+	
 	@Spy
 	private DownloadQueue mockQueue = new DownloadQueue();
+	
 	@Mock
 	private DownloadMonitor mockDownloadMonitor;
+	
 	@Captor
 	private ArgumentCaptor<Download> captorDownload;
 	

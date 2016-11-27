@@ -24,8 +24,10 @@ public class DownloaderAppTest {
 
 	@Mock
 	private DownloadService mockDownloadService;
+
 	@Mock
 	private DownloadMonitor mockMonitor;
+
 	@Spy
 	private Downloader spyDownloader = new Downloader();
 
