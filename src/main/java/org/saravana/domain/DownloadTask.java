@@ -22,21 +22,16 @@ public class DownloadTask implements Runnable {
 
 	@Override
 	public void run() {
-		Runnable task = () -> {
-			getTask();
-		};
-
 		try {
-			new Thread(task).start();
+			new Thread(() -> doTask()).start();
 		} catch (Exception e) {
 			download.setStatus(Status.FAILED);
 			download.setMessage(e.getMessage());
 			LOG.error("Exception while copying ", e);
 		}
-
 	}
 
-	protected void getTask() {
+	protected void doTask() {
 		String fullPath = download.getUrl().getFile();
 		File file = new File(download.getPath(), fullPath.substring(fullPath.lastIndexOf('/')));
 		OutputStream os = null;

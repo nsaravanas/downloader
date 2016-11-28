@@ -321,3 +321,64 @@ java.io.FileNotFoundException: /home/nsaravanas/photo/DSC_00918.jpg (No such fil
 2016-11-27 11:26:02.107  INFO 7915 --- [main] org.saravana.Downloader                  : Started Downloader in 65.869 seconds (JVM running for 66.817)
 2016-11-27 11:26:03.319  INFO 7915 --- [pool-2-thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@3b6ddd1d: startup date [Sun Nov 27 11:24:56 IST 2016]; root of context hierarchy
 2016-11-27 11:26:03.321  INFO 7915 --- [pool-2-thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-11-28 10:58:28.085  INFO 10062 --- [main] org.saravana.Downloader                  : Starting Downloader on ubuntu with PID 10062 (/home/nsaravanas/downloader/target/classes started by nsaravanas in /home/nsaravanas/downloader)
+2016-11-28 10:58:28.140  INFO 10062 --- [main] org.saravana.Downloader                  : No active profile set, falling back to default profiles: default
+2016-11-28 10:58:28.265  INFO 10062 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1442d7b5: startup date [Mon Nov 28 10:58:28 IST 2016]; root of context hierarchy
+2016-11-28 10:58:30.547  INFO 10062 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-11-28 10:58:30.569  INFO 10062 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2016-11-28 10:58:30.592  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : NO  LOCATION                  STATUS     URL                                                     MESSAGE                                                                                             
+2016-11-28 10:58:30.592  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : ------------------------------------------------------------------------------------------------------------------------------------------------------
+2016-11-28 10:58:30.592  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : ------------------------------------------------------------------------------------------------------------------------------------------------------
+2016-11-28 10:58:30.602 ERROR 10062 --- [main] o.saravana.service.DownloadServiceImpl   : Exception while getting handler 
+
+java.lang.IllegalArgumentException: handler for scheme xyz not found
+	at org.saravana.util.URLHandlerFactory.getHandler(URLHandlerFactory.java:39) ~[classes/:na]
+	at org.saravana.service.DownloadServiceImpl.submitDownload(DownloadServiceImpl.java:38) ~[classes/:na]
+	at org.saravana.Downloader.run(Downloader.java:45) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:782) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:769) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.saravana.Downloader.main(Downloader.java:36) [classes/:na]
+
+2016-11-28 10:58:30.603 ERROR 10062 --- [main] o.saravana.service.DownloadServiceImpl   : Exception while getting handler 
+
+java.lang.IllegalArgumentException: handler for scheme abc not found
+	at org.saravana.util.URLHandlerFactory.getHandler(URLHandlerFactory.java:39) ~[classes/:na]
+	at org.saravana.service.DownloadServiceImpl.submitDownload(DownloadServiceImpl.java:38) ~[classes/:na]
+	at org.saravana.Downloader.run(Downloader.java:45) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:782) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:769) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.saravana.Downloader.main(Downloader.java:36) [classes/:na]
+
+2016-11-28 10:58:30.660  INFO 10062 --- [main] org.saravana.Downloader                  : Started Downloader in 3.846 seconds (JVM running for 6.176)
+2016-11-28 10:58:30.689 ERROR 10062 --- [Thread-5] org.saravana.domain.DownloadTask         : Exception while copying 
+
+java.io.FileNotFoundException: /home/nsaravanas/photo/DSC_00918.jpg (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method) ~[na:1.8.0_60]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[na:1.8.0_60]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[na:1.8.0_60]
+	at java.io.FileInputStream.<init>(FileInputStream.java:93) ~[na:1.8.0_60]
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90) ~[na:1.8.0_60]
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188) ~[na:1.8.0_60]
+	at java.net.URL.openStream(URL.java:1038) ~[na:1.8.0_60]
+	at org.saravana.domain.DownloadTask.doTask(DownloadTask.java:43) [classes/:na]
+	at org.saravana.domain.DownloadTask.lambda$0(DownloadTask.java:26) [classes/:na]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_60]
+
+2016-11-28 10:58:40.593  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : NO  LOCATION                  STATUS     URL                                                     MESSAGE                                                                                             
+2016-11-28 10:58:40.594  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : ------------------------------------------------------------------------------------------------------------------------------------------------------
+2016-11-28 10:58:40.594  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : 1   /tmp/pom.xml              COMPLETED  file:///home/nsaravanas/excel/excel-compare/pom.xml     Done                                                                                                
+2016-11-28 10:58:40.595  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : 2   -                         REJECTED   xyz:///home/nsaravanas/excel/excel-compare/pom.xml      handler for scheme xyz not found                                                                    
+2016-11-28 10:58:40.595  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : 3   -                         REJECTED   abc:///home/nsaravanas/excel/excel-compare/pom.xml      handler for scheme abc not found                                                                    
+2016-11-28 10:58:40.596  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : 4   /tmp/DSC_0099.jpg         COMPLETED  file:////home/nsaravanas/photo/DSC_0099.jpg             Done                                                                                                
+2016-11-28 10:58:40.596  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : 5   -                         FAILED     file:////home/nsaravanas/photo/DSC_00918.jpg            /home/nsaravanas/photo/DSC_00918.jpg (No such file or directory)                                    
+2016-11-28 10:58:40.597  INFO 10062 --- [pool-2-thread-1] org.saravana.Downloader                  : ------------------------------------------------------------------------------------------------------------------------------------------------------
+2016-11-28 10:58:45.622  INFO 10062 --- [pool-2-thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@1442d7b5: startup date [Mon Nov 28 10:58:28 IST 2016]; root of context hierarchy
+2016-11-28 10:58:45.624  INFO 10062 --- [pool-2-thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown

@@ -55,7 +55,7 @@ public class DownloadTaskTest {
 		} catch (IOException e) {
 			fail("IOUtils test error");
 		}
-		downloadTask.getTask();
+		downloadTask.doTask();
 
 		assertNotNull(spyDownload);
 		assertEquals(Download.Status.COMPLETED, spyDownload.getStatus());
@@ -67,7 +67,7 @@ public class DownloadTaskTest {
 		downloadTask = new DownloadTask(spyDownload);
 		doReturn(mockURL).when(spyDownload).getUrl();
 
-		downloadTask.getTask();
+		downloadTask.doTask();
 
 		assertNotNull(spyDownload);
 		assertEquals(Download.Status.FAILED, spyDownload.getStatus());
