@@ -38,7 +38,7 @@ public class URLHandlerFactory {
 		if (claz == null) {
 			throw new IllegalArgumentException("handler for scheme " + scheme + " not found");
 		}
-		return (URLStreamHandler) getHandlerCache(claz);
+		return getHandlerCache(claz);
 	}
 
 	private URLStreamHandler getHandlerCache(String claz) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
@@ -47,7 +47,7 @@ public class URLHandlerFactory {
 			handler = (URLStreamHandler) Class.forName(claz).newInstance();
 			cache.put(claz, handler);
 		}
-		return (URLStreamHandler) handler;
+		return handler;
 	}
 
 	@PreDestroy
